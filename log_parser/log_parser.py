@@ -109,10 +109,7 @@ def get_change_stats_by_extension():
             entries.append([entry.added, entry.removed, extensions[file_extension]])
     return entries, extensions
 
-def export_to_csv(fileName, entriesList):
-    with open(fileName, 'wb') as csvFile:
-        wr = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
-        wr.writerows(entriesList)
+
 
 
 

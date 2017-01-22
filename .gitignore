@@ -229,6 +229,9 @@ FakesAssemblies/
 **/*.Server/ModelManifest.xml
 _Pvt_Extensions
 
+# Visual Studio Code
+.vscode
+
 # Paket dependency manager
 .paket/paket.exe
 
@@ -241,3 +244,7 @@ _Pvt_Extensions
 *.pyc
 
 /log_parser/output/
+
+# R Language & RStudio
+*.RData
+*.Rhistory

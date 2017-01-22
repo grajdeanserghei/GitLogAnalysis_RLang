@@ -1,6 +1,7 @@
 from collections import defaultdict
 import re
 import os.path
+import csv
 
 def parseCommits(log_fh):
     commits = []
@@ -52,7 +53,12 @@ def denormalize_commits(commits):
     return results, headers
       
 
-def get_commit_entries():
-    with open('../../docs/log-examples/AutoFixture.log') as file:
+def get_commit_entries(fileName):
+    with open(fileName) as file:
         fileEntries = parseCommits(file)
         return fileEntries
+
+def export_to_csv(fileName, entriesList):
+    with open(fileName, 'wb') as csvFile:
+        wr = csv.writer(csvFile, quoting=csv.QUOTE_MINIMAL)
+        wr.writerows(entriesList)
